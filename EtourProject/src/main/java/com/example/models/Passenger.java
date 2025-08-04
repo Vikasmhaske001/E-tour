@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.List;import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
@@ -22,7 +23,7 @@ public class Passenger {
 
     private String paxName;
 
-    private Date paxBirthdate;
+    private LocalDate paxBirthdate;
     
     private int paxAge;
 

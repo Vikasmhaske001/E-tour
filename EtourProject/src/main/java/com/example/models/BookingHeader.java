@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 @Entity
 @Table(name = "bookingheader")
@@ -15,7 +16,7 @@ public class BookingHeader {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bookingId;
 
-    private Timestamp bookingDate;
+    private LocalDateTime bookingDate;
 
     private int noOfPax;
 

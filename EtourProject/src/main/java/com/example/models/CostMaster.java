@@ -23,9 +23,6 @@ public class CostMaster {
 
     private double childWithoutBed;
 
-    private Date validFrom;
-
-    private Date validTo;
 
     @ManyToOne
     @JoinColumn(name = "package_id")

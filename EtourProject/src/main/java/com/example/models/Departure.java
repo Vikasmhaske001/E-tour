@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.List;
 @Entity
 @Table(name = "departure")
@@ -15,9 +16,9 @@ public class Departure {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int departureId;
 
-    private Date departDate;
+    private LocalDate departDate;
 
-    private Date endDate;
+    private LocalDate endDate;
 
     private Integer noOfDays;
 

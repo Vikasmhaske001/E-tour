@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.List;
 @Entity
 @Table(name = "packagemaster")
@@ -23,9 +24,9 @@ public class PackageMaster {
 
     private Integer durationDays;
 
-    private Date startDate;
+    private LocalDate startDate;
 
-    private Date endDate;
+    private LocalDate endDate;
 
     @ManyToOne
     @JoinColumn(name = "subcat_id")

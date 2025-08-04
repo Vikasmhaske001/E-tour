@@ -21,8 +21,8 @@ public class PaymentStatus {
     @Column(nullable = false)
     private String packageName;
 
-    @Column(nullable = false)
-    private Date departureDate;
+//    @Column(nullable = false)
+//    private Date departureDate;
 
     @Column(nullable = false)
     private double totalAmount;

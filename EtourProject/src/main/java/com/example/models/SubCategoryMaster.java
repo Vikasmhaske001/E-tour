@@ -1,16 +1,11 @@
 package com.example.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.*;
-import java.sql.Date;
-import java.sql.Timestamp;
 import java.util.List;
 
 @Entity
 @Table(name = "subcategorymaster")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class SubCategoryMaster {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +16,7 @@ public class SubCategoryMaster {
 
     private String subcatImagePath;
 
+    @Column(columnDefinition = "TINYINT(1)")
     private boolean flag;
 
     @ManyToOne
@@ -30,4 +26,54 @@ public class SubCategoryMaster {
     @OneToMany(mappedBy = "subCategory")
     @JsonIgnore
     private List<PackageMaster> packages;
+
+	public int getSubcatId() {
+		return subcatId;
+	}
+
+	public void setSubcatId(int subcatId) {
+		this.subcatId = subcatId;
+	}
+
+	public String getSubcatName() {
+		return subcatName;
+	}
+
+	public void setSubcatName(String subcatName) {
+		this.subcatName = subcatName;
+	}
+
+	public String getSubcatImagePath() {
+		return subcatImagePath;
+	}
+
+	public void setSubcatImagePath(String subcatImagePath) {
+		this.subcatImagePath = subcatImagePath;
+	}
+
+	public boolean isFlag() {
+		return flag;
+	}
+
+	public void setFlag(boolean flag) {
+		this.flag = flag;
+	}
+
+	public CategoryMaster getCategory() {
+		return category;
+	}
+
+	public void setCategory(CategoryMaster category) {
+		this.category = category;
+	}
+
+	public List<PackageMaster> getPackages() {
+		return packages;
+	}
+
+	public void setPackages(List<PackageMaster> packages) {
+		this.packages = packages;
+	}
+    
+    
 }
