@@ -9,5 +9,5 @@ public interface CustomerService {
     List<Customer> getAllCustomers();
     Optional<Customer> getCustomerById(int id);
     Customer createCustomer(Customer customer);
-    void deleteCustomer(int id);
+    
 }

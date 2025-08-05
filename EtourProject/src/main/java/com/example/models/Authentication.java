@@ -24,7 +24,7 @@ public class Authentication {
 
    
     @Column(nullable = false)
-    private boolean enabled = true;  // for account activation status
+    private boolean enabled = true;  
 
     @OneToOne
     @JoinColumn(name = "cust_id", referencedColumnName = "custId")

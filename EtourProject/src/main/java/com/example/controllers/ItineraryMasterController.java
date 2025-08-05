@@ -13,12 +13,9 @@ import java.util.List;
 public class ItineraryMasterController {
 
     @Autowired
-    private ItineraryMasterService service;
+    private ItineraryService service;
 
-    @PostMapping
-    public ResponseEntity<ItineraryMaster> addItinerary(@RequestBody ItineraryMaster itinerary) {
-        return ResponseEntity.ok(service.saveItinerary(itinerary));
-    }
+   
 
     @GetMapping
     public ResponseEntity<List<ItineraryMaster>> getAllItineraries() {
@@ -37,9 +34,5 @@ public class ItineraryMasterController {
         return ResponseEntity.ok(service.getItinerariesByPackageId(packageId));
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteItinerary(@PathVariable int id) {
-        service.deleteItinerary(id);
-        return ResponseEntity.noContent().build();
-    }
+   
 }

@@ -16,10 +16,6 @@ public class CostMasterController {
     @Autowired
     private CostMasterService costMasterService;
 
-    @PostMapping
-    public ResponseEntity<CostMaster> createCost(@RequestBody CostMaster costMaster) {
-        return ResponseEntity.ok(costMasterService.saveCost(costMaster));
-    }
 
     @GetMapping("/{id}")
     public ResponseEntity<CostMaster> getCostById(@PathVariable int id) {
@@ -33,9 +29,4 @@ public class CostMasterController {
         return ResponseEntity.ok(costMasterService.getAllCosts());
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteCost(@PathVariable int id) {
-        costMasterService.deleteCostById(id);
-        return ResponseEntity.ok("Cost deleted successfully");
-    }
 }

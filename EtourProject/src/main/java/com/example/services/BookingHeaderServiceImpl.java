@@ -29,10 +29,7 @@ public class BookingHeaderServiceImpl implements BookingHeaderService {
         return bookingHeaderRepository.findById(id);
     }
 
-    @Override
-    public void deleteBookingById(int id) {
-        bookingHeaderRepository.deleteById(id);
-    }
+    
 
     @Override
     public List<BookingHeader> getBookingsByCustomerId(int customerId) {

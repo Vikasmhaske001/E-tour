@@ -1,7 +1,6 @@
 package com.example.controllers;
 
 import com.example.models.PackageMaster;
-import com.example.services.PackageMasterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,12 +13,9 @@ import java.util.List;
 public class PackageMasterController {
 
     @Autowired
-    private PackageMasterService packageService;
+    private PackageService packageService;
 
-    @PostMapping
-    public ResponseEntity<PackageMaster> createPackage(@RequestBody PackageMaster pkg) {
-        return ResponseEntity.ok(packageService.savePackage(pkg));
-    }
+   
 
     @GetMapping
     public ResponseEntity<List<PackageMaster>> getAllPackages() {
@@ -33,10 +29,4 @@ public class PackageMasterController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletePackage(@PathVariable int id) {
-        packageService.deletePackage(id);
-        return ResponseEntity.noContent().build();
-    }
 }

@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ItineraryMasterRepository extends JpaRepository<ItineraryMaster, Integer> {
-    List<ItineraryMaster> findByPackageMaster_PackageId(int packageId);
+public interface ItineraryRepository extends JpaRepository<ItineraryMaster, Integer> {
+    List<ItineraryMaster> findByPackageMaster_PackageIdOrderByDayNoAsc(Integer packageId);
 }

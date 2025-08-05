@@ -26,16 +26,10 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer createCustomer(Customer customer) {
-        return customerRepository.save(customer);
+    public Customer createCustomer(Customer createCust) {
+//    		Customer c = new Customer();
+//    		c.setCustId(createCust.getCustId());
+        return customerRepository.save(createCust);
     }
 
-
-    @Override
-    public void deleteCustomer(int id) {
-        if (!customerRepository.existsById(id)) {
-            throw new EntityNotFoundException("Customer not found with id " + id);
-        }
-        customerRepository.deleteById(id);
-    }
 }

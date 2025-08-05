@@ -18,7 +18,11 @@ public class PassengerController {
 
     @PostMapping
     public ResponseEntity<Passenger> createPassenger(@RequestBody Passenger passenger) {
-        Passenger saved = passengerService.savePassenger(passenger);
+    	 if (passenger.getCustomer() == null) {
+    	        return ResponseEntity.badRequest().body(null);
+    	    }
+        int custId = passenger.getCustomer().getCustId(); // ✅ extract ID from input
+        Passenger saved = passengerService.savePassengerWithCustomer(custId, passenger);
         return ResponseEntity.ok(saved);
     }
 

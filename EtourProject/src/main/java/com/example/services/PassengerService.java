@@ -10,4 +10,6 @@ public interface PassengerService {
     List<Passenger> getAllPassengers();
     Optional<Passenger> getPassengerById(int id);
     void deletePassenger(int id);
+    Passenger savePassengerWithCustomer(int custId, Passenger passenger);
+
 }

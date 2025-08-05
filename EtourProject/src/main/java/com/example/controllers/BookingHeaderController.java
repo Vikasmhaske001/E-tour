@@ -32,11 +32,6 @@ public class BookingHeaderController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteBooking(@PathVariable int id) {
-        bookingService.deleteBookingById(id);
-        return ResponseEntity.noContent().build();
-    }
 
     @GetMapping("/customer/{custId}")
     public ResponseEntity<List<BookingHeader>> getBookingsByCustomerId(@PathVariable int custId) {

@@ -21,9 +21,6 @@ public class PaymentStatus {
     @Column(nullable = false)
     private String packageName;
 
-//    @Column(nullable = false)
-//    private Date departureDate;
-
     @Column(nullable = false)
     private double totalAmount;
 
@@ -31,12 +28,12 @@ public class PaymentStatus {
     @Column(length = 20, nullable = false)
     private PaymentStatusEnum paymentStatus;
 
-    // Relationship: Many payment status entries can belong to one booking
+ 
     @ManyToOne
     @JoinColumn(name = "booking_id", referencedColumnName = "bookingId")
     private BookingHeader booking;
 
-    // Optional: to track who made the payment
+   
     @ManyToOne
     @JoinColumn(name = "cust_id", referencedColumnName = "custId")
     private Customer customer;

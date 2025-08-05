@@ -8,5 +8,5 @@ public interface CostMasterService {
     CostMaster saveCost(CostMaster costMaster);
     Optional<CostMaster> getCostById(int id);
     List<CostMaster> getAllCosts();
-    void deleteCostById(int id);
+  
 }

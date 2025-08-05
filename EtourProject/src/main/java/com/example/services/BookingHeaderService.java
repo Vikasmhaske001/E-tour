@@ -8,6 +8,5 @@ public interface BookingHeaderService {
     BookingHeader createBooking(BookingHeader booking);
     List<BookingHeader> getAllBookings();
     Optional<BookingHeader> getBookingById(int id);
-    void deleteBookingById(int id);
     List<BookingHeader> getBookingsByCustomerId(int customerId);
 }

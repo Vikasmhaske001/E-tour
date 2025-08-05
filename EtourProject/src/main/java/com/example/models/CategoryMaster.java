@@ -8,65 +8,77 @@ import java.util.List;
 
 @Entity
 @Table(name = "categorymaster")
-
 public class CategoryMaster {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int catId;
+    @Column(name = "ctg_master_id")
+    private Integer ctgMasterId;
 
-    @NotBlank(message = "Category name is required")
-    private String catName;
+    @Column(name = "ctg_id", length = 20, nullable = false)
+    private String ctgId;
 
-    private String catImagePath;
+    @Column(name = "sub_ctg_name", length = 20)
+    private String subCtgName;
 
-    
-    @Column(columnDefinition = "TINYINT(1)")
-    private boolean flag = true;
+    @Column(name = "ctg_name", length = 30)
+    private String ctgName;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonIgnore
-    private List<SubCategoryMaster> subcategories;
+    @Column(name = "ctg_img_path", length = 50)
+    private String ctgImgPath;
 
-	public int getCatId() {
-		return catId;
-	}
+    @Column(name = "flag")
+    private Boolean flag;
 
-	public void setCatId(int catId) {
-		this.catId = catId;
-	}
+    // Getters and Setters
 
-	public String getCatName() {
-		return catName;
-	}
+    public Integer getCtgMasterId() {
+        return ctgMasterId;
+    }
 
-	public void setCatName(String catName) {
-		this.catName = catName;
-	}
+    public void setCtgMasterId(Integer ctgMasterId) {
+        this.ctgMasterId = ctgMasterId;
+    }
 
-	public String getCatImagePath() {
-		return catImagePath;
-	}
+    public String getCtgId() {
+        return ctgId;
+    }
 
-	public void setCatImagePath(String catImagePath) {
-		this.catImagePath = catImagePath;
-	}
+    public void setCtgId(String ctgId) {
+        this.ctgId = ctgId;
+    }
 
-	public boolean isFlag() {
-		return flag;
-	}
+    public String getSubCtgName() {
+        return subCtgName;
+    }
 
-	public void setFlag(boolean flag) {
-		this.flag = flag;
-	}
+    public void setSubCtgName(String subCtgName) {
+        this.subCtgName = subCtgName;
+    }
 
-	public List<SubCategoryMaster> getSubcategories() {
-		return subcategories;
-	}
+    public String getCtgName() {
+        return ctgName;
+    }
 
-	public void setSubcategories(List<SubCategoryMaster> subcategories) {
-		this.subcategories = subcategories;
-	}
-    
+    public void setCtgName(String ctgName) {
+        this.ctgName = ctgName;
+    }
+
+    public String getCtgImgPath() {
+        return ctgImgPath;
+    }
+
+    public void setCtgImgPath(String ctgImgPath) {
+        this.ctgImgPath = ctgImgPath;
+    }
+
+    public Boolean getFlag() {
+        return flag;
+    }
+
+    public void setFlag(Boolean flag) {
+        this.flag = flag;
+    }
    
     
     

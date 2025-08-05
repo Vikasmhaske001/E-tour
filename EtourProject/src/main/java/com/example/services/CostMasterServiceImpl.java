@@ -30,8 +30,4 @@ public class CostMasterServiceImpl implements CostMasterService {
         return costMasterRepository.findAll();
     }
 
-    @Override
-    public void deleteCostById(int id) {
-        costMasterRepository.deleteById(id);
-    }
 }
